@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemirbasKayıtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="urunler">
+    <Key>
+      <PropertyRef Name="urunId" />
+    </Key>
+    <Property Name="urunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cinsi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="urunAdı" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="marka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="alanKisi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="departman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="alisTarihi" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="DemirbasKayıtEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="urunler" EntityType="Self.urunler" />
+  </EntityContainer>
+</Schema>

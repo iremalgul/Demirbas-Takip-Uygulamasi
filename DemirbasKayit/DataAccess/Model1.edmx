@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DemirbasKayıtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="urunId" />
+          </Key>
+          <Property Name="urunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunKodu" Type="varchar" MaxLength="50" />
+          <Property Name="cinsi" Type="varchar" MaxLength="50" />
+          <Property Name="urunAdı" Type="varchar" MaxLength="50" />
+          <Property Name="marka" Type="varchar" MaxLength="50" />
+          <Property Name="model" Type="varchar" MaxLength="50" />
+          <Property Name="alanKisi" Type="varchar" MaxLength="50" />
+          <Property Name="departman" Type="varchar" MaxLength="50" />
+          <Property Name="alisTarihi" Type="date" />
+        </EntityType>
+        <EntityContainer Name="DemirbasKayıtModelStoreContainer">
+          <EntitySet Name="urunler" EntityType="Self.urunler" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DemirbasKayıtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="urunId" />
+          </Key>
+          <Property Name="urunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cinsi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="urunAdı" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="marka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alanKisi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="departman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alisTarihi" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="DemirbasKayıtEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="urunler" EntityType="Self.urunler" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DemirbasKayıtModelStoreContainer" CdmEntityContainer="DemirbasKayıtEntities">
+          <EntitySetMapping Name="urunler">
+            <EntityTypeMapping TypeName="DemirbasKayıtModel.urunler">
+              <MappingFragment StoreEntitySet="urunler">
+                <ScalarProperty Name="urunId" ColumnName="urunId" />
+                <ScalarProperty Name="urunKodu" ColumnName="urunKodu" />
+                <ScalarProperty Name="cinsi" ColumnName="cinsi" />
+                <ScalarProperty Name="urunAdı" ColumnName="urunAdı" />
+                <ScalarProperty Name="marka" ColumnName="marka" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="alanKisi" ColumnName="alanKisi" />
+                <ScalarProperty Name="departman" ColumnName="departman" />
+                <ScalarProperty Name="alisTarihi" ColumnName="alisTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
